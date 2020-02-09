@@ -4,23 +4,24 @@ pkgver=0.1
 pkgrel=1
 pkgdesc="uwu your terminal today!"
 arch=('any')
-# url=''
+url="https://git.niichan.moe/98WuG/uwu"
 license=('GPL')
 depends=()
 makedepends=('gcc')
 checkdepends=()
 changelog=
-source=("$pkgname-$pkgver.tar.gz")
+source=("https://git.niichan.moe/98WuG/${pkgname}/archive/${pkgver}.tar.gz")
 noextract=()
-md5sums=()
+md5sums=("e8a17d4b4b927e6265d456eb4cbc09b1")
 validpgpkeys=()
 
 build() {
-	cd "$pkgname-$pkgver"
+	cd "$pkgname"
 	make
 }
 
 package() {
-	cd "$pkgname-$pkgver"
-	install -Dm644 uwu "/usr/bin/$pkgname"
+	cd "$pkgname"
+    mkdir -p $pkgdir/usr/bin
+	install -Dm755 uwu "$pkgdir/usr/bin/$pkgname"
 }
