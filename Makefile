@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -w
+CFLAGS = -std=gnu89 -w
 EXECS = uwu
 
 all: $(EXECS)
